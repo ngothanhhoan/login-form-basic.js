@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Validated Login Form</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<h1 class="label">User Login</h1>
+		<form class="loginForm" action="home.html" method="post" name="form" onsubmit="return validated()">
+
+			<div class="font">User name</div>
+			<input autocomplete="off" type="text" name="form">
+			<div id="formError">User:Ngothanhhoan</div>
+
+			<div class="font font2">Password</div>
+			<input type="password" name="password">
+			<div id="passError">User:Ngothanhhoan</div>
+
+			<div class="forget-password" onclick="forgotPassword()">Quên mật khẩu</div>
+
+			<button type="submit">đăng nhập</button>
+		</form>
+	</div>	
+	<script src="main.js"></script>
+</body>
+</html>
