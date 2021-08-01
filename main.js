@@ -1,43 +1,30 @@
-
-var form = document.forms['form']['form'];
-var password = document.forms['form']['password'];
-
-var formError = document.getElementById('formError');
-var passError = document.getElementById('passError');
-
-form.addEventListener('textInput', formVerify);
-password.addEventListener('textInput', passVerify);
-
-function validated(){
-	if (form.value.length < 9) {
-		form.style.border = "1px solid red";
-		formError.style.display = "block";
-		form.focus();
-		return false;
+function checkInfo() {
+	var userInputValue = document.getElementById("user-info").value,
+	 	passwordInputValue = document.getElementById("password-info").value
+  
+	if(userInputValue == 'Tranvansu' && passwordInputValue == 'Ngothanhhoan') { 
+	  alert('Logged in successfully')
+	  document.querySelector("#check-user").innerHTML = '';
+	  document.querySelector("#check-password").innerHTML = '';
 	}
-	if (password.value.length < 6) {
-		password.style.border = "1px solid red";
-		passError.style.display = "block";
-		password.focus();
-		return false;
+  
+	if (userInputValue !== 'Ngothanhhoan' && passwordInputValue == 'Ngothanhhoan') { // ! = not
+	  document.querySelector("#check-user").innerHTML = 'User: Ngothanhhoan';
+	  document.querySelector("#check-password").innerHTML = '';
 	}
-
-}
-function formVerify(){
-	if (form.value.length >= 8) {
-		form.style.border = "1px solid silver";
-		formError.style.display = "none";
-		return true;
+  
+	if (userInputValue == 'Ngothanhhoan' && passwordInputValue !== 'Ngothanhhoan') {
+	  document.querySelector("#check-user").innerHTML = '';
+	  document.querySelector("#check-password").innerHTML = 'Password: Ngothanhhoan';
 	}
-}
-function passVerify(){
-	if (passwrd.value.length >= 5) {
-		password.style.border = "1px solid silver";
-		passError.style.display = "none";
-		return true;
+	
+	if (userInputValue !== 'Ngothanhhoan' && passwordInputValue !== 'Ngothanhhoan') {
+	  document.querySelector("#check-user").innerHTML = 'User: Ngothanhhoan';
+	  document.querySelector("#check-password").innerHTML = 'Password: Ngothanhhoan';
 	}
-}
-
-function forgotPassword() {
-	alert('...............')   
+  };
+  
+  function forgotPassword() {
+	alert('Quên thì thôi!')   
   }
+  
